@@ -27,7 +27,7 @@ export default function Post({ post, morePosts }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
+            <article data-sb-object-id={post.sys.id}>
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
