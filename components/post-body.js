@@ -8,18 +8,19 @@ const customMarkdownOptions = (content) => ({
     [BLOCKS.EMBEDDED_ASSET]: (node) => (
       <RichTextAsset
         id={node.data.target.sys.id}
-        assets={content.links.assets.block}
+        assets={content.links?.assets.block}
       />
     ),
   },
 })
 
 export default function PostBody({ content }) {
+
   return (
     <div className="max-w-2xl mx-auto">
       <div className={markdownStyles['markdown']}>
         {documentToReactComponents(
-          content.json,
+          content,
           customMarkdownOptions(content)
         )}
       </div>

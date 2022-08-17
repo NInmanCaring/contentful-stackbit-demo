@@ -10,6 +10,7 @@ import { CMS_NAME } from '../lib/constants'
 export default function Index({ allPosts }) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
+
   return (
     <>
       <Layout>
@@ -21,11 +22,9 @@ export default function Index({ allPosts }) {
           {heroPost && (
             <HeroPost
               title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
+              heroImage={heroPost.heroImage}
               slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
+              description={heroPost.description}
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
